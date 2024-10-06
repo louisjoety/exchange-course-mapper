@@ -8,10 +8,10 @@ import java.io.IOException;
 import java.util.Set;
 
 public class Duke {
-    public static void main(String[] args) throws IOException { // Declare IOException in the method signature
-        String filePath = "C:\\Users\\Louis Joe\\IdeaProjects\\tp\\data\\database.json"; // Change this to your actual file path
+    public static void main(String[] args) throws IOException {
+        String filePath = "C:\\Users\\Louis Joe\\IdeaProjects\\tp\\data\\database.json";
 
-        JsonReader jsonReader = Json.createReader(new FileReader(filePath)); // No try-catch block
+        JsonReader jsonReader = Json.createReader(new FileReader(filePath));
         JsonObject jsonObject = jsonReader.readObject();
 
         Set<String> universityNames = jsonObject.keySet();
