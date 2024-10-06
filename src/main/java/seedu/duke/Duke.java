@@ -9,7 +9,7 @@ import java.util.Set;
 
 public class Duke {
     public static void main(String[] args) throws IOException {
-        String filePath = "./data/database.json";
+        String filePath = "C:\\Users\\Louis Joe\\IdeaProjects\\tp\\data\\database.json";
 
         JsonReader jsonReader = Json.createReader(new FileReader(filePath));
         JsonObject jsonObject = jsonReader.readObject();
