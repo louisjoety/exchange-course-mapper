@@ -276,5 +276,88 @@
         "nus_course_name": "Computer Vision"
       }
     ]
+  },
+  
+  "Victoria University of Wellington": {
+    "courses": [
+      {
+        "pu_course_code": "COMP102",
+        "pu_course_name": "Introduction to Computer Program Design",
+        "nus_course_code": "CS1010J",
+        "nus_course_name": "Programming Methodology"
+      },
+      {
+        "pu_course_code": "COMP103",
+        "pu_course_name": "Introduction to Data Structures and Algorithms",
+        "nus_course_code": "CS2040",
+        "nus_course_name": "Data Structures and Algorithms"
+      },
+      {
+        "pu_course_code": "INFO151",
+        "pu_course_name": "Databases",
+        "nus_course_code": "CS2102",
+        "nus_course_name": "Database Systems"
+      },
+      {
+        "pu_course_code": "SWEN221",
+        "pu_course_name": "Software Development",
+        "nus_course_code": "CS2103",
+        "nus_course_name": "Software Engineering"
+      },
+      {
+        "pu_course_code": "NWEN301",
+        "pu_course_name": "Operating Systems Design",
+        "nus_course_code": "CS2106",
+        "nus_course_name": "Introduction to Operating Systems"
+      },
+      {
+        "pu_course_code": "NWEN405",
+        "pu_course_name": "Security Engineering",
+        "nus_course_code": "CS2107",
+        "nus_course_name": "Introduction to Information Security"
+      },
+      {
+        "pu_course_code": "NWEN303",
+        "pu_course_name": "Concurrent Programming",
+        "nus_course_code": "CS3211",
+        "nus_course_name": "Parallel and Concurrent Programming"
+      },
+      {
+        "pu_course_code": "COMP361",
+        "pu_course_name": "Design and Analysis of Algorithms",
+        "nus_course_code": "CS3230",
+        "nus_course_name": "Design and Analysis of Algorithms"
+      },
+      {
+        "pu_course_code": "MATH324",
+        "pu_course_name": "Coding and Cryptography",
+        "nus_course_code": "CS3236",
+        "nus_course_name": "Introduction to Information Theory"
+      },
+      {
+        "pu_course_code": "SWEN303",
+        "pu_course_name": "User Interface Design",
+        "nus_course_code": "CS3240",
+        "nus_course_name": "Interaction Design"
+      },
+      {
+        "pu_course_code": "MDDN241",
+        "pu_course_name": "3D Modelling and Animation II",
+        "nus_course_code": "CS3242",
+        "nus_course_name": "3D Modeling and Animation"
+      },
+      {
+        "pu_course_code": "SWEN421",
+        "pu_course_name": "Formal Software Engineering",
+        "nus_course_code": "CS4211",
+        "nus_course_name": "Formal Methods for Software Engineering"
+      },
+      {
+        "pu_course_code": "CYBR371",
+        "pu_course_name": "System and Network Security",
+        "nus_course_code": "CS5231",
+        "nus_course_name": "Systems Security"
+      }
+    ]
   }
 }
