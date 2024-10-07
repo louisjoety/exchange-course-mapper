@@ -277,7 +277,7 @@
       }
     ]
   },
-  
+
   "Victoria University of Wellington": {
     "courses": [
       {
@@ -357,6 +357,149 @@
         "pu_course_name": "System and Network Security",
         "nus_course_code": "CS5231",
         "nus_course_name": "Systems Security"
+      }
+    ]
+  },
+
+  "The University of Western Australia": {
+    "courses": [
+      {
+        "pu_course_code": "CITS3002",
+        "pu_course_name": "Computer Networks",
+        "nus_course_code": "CS2105",
+        "nus_course_name": "Introduction to Computer Network"
+      },
+      {
+        "pu_course_code": "CITS5507",
+        "pu_course_name": "High Performance Computing",
+        "nus_course_code": "CS3210",
+        "nus_course_name": "Parallel Computing"
+      },
+      {
+        "pu_course_code": "CITS4419",
+        "pu_course_name": "Mobile and Wireless Computing",
+        "nus_course_code": "CS4222",
+        "nus_course_name": "Wireless Networking"
+      },
+      {
+        "pu_course_code": "CITS1402",
+        "pu_course_name": "Relational Database Management Systems",
+        "nus_course_code": "CS2102",
+        "nus_course_name": "Database Systems"
+      },
+      {
+        "pu_course_code": "CITS5503",
+        "pu_course_name": "Cloud Computing",
+        "nus_course_code": "CS5224",
+        "nus_course_name": "Cloud Computing"
+      },
+      {
+        "pu_course_code": "CITS3004",
+        "pu_course_name": "Cybersecurity",
+        "nus_course_code": "CS3235",
+        "nus_course_name": "Computer Security"
+      },
+      {
+        "pu_course_code": "CITS4404",
+        "pu_course_name": "Artificial Intelligence and Adaptive Systems",
+        "nus_course_code": "BT4014",
+        "nus_course_name": "Analytics Driven Design of Adaptive Systems"
+      },
+      {
+        "pu_course_code": "CITS3001",
+        "pu_course_name": "Algorithms, Agents and Artificial Intelligence",
+        "nus_course_code": "BT4014",
+        "nus_course_name": "Analytics Driven Design of Adaptive Systems"
+      },
+      {
+        "pu_course_code": "BUSN5001",
+        "pu_course_name": "Blockchain and Distributed Ledger Technologies in Business",
+        "nus_course_code": "IS4302",
+        "nus_course_name": "Blockchain and Distributed Ledger Technologies"
+      },
+      {
+        "pu_course_code": "STAT3063",
+        "pu_course_name": "Spatial Statistics and Modeling",
+        "nus_course_code": "BT4015",
+        "nus_course_name": "Geospatial Analytics"
+      },
+      {
+        "pu_course_code": "STAT4064",
+        "pu_course_name": "Applied Predictive Modeling",
+        "nus_course_code": "BT4240",
+        "nus_course_name": "Machine Learning for Predictive Dat Analytics"
+      },
+      {
+        "pu_course_code": "MKTG5504",
+        "pu_course_name": "Big Data in Marketing",
+        "nus_course_code": "BT4211",
+        "nus_course_name": "Data-Driven Marketing"
+      },
+      {
+        "pu_course_code": "MATH3002",
+        "pu_course_name": "Network Science",
+        "nus_course_code": "IS4241",
+        "nus_course_name": "Social Media Network Analysis"
+      },
+      {
+        "pu_course_code": "MKGT3307",
+        "pu_course_name": "Digital Marketing",
+        "nus_course_code": "BT4211",
+        "nus_course_name": "Data-Driven Marketing"
+      },
+      {
+        "pu_course_code": "CITS4404",
+        "pu_course_name": "Artificial Intelligence and Adaptive Systems",
+        "nus_course_code": "IS4242",
+        "nus_course_name": "Intelligent Systems and Techniques"
+      },
+      {
+        "pu_course_code": "CITS2200",
+        "pu_course_name": "Data Structure and Algorithms",
+        "nus_course_code": "CS2040",
+        "nus_course_name": "Data Structure and Algorithms"
+      },
+      {
+        "pu_course_code": "CITS4009",
+        "pu_course_name": "Computational Data Analysis",
+        "nus_course_code": "BT4014",
+        "nus_course_name": "Analytics Driven Design of Adaptive Systems"
+      },
+      {
+        "pu_course_code": "FINA4491",
+        "pu_course_name": "Capital Markets Research",
+        "nus_course_code": "BT4013",
+        "nus_course_name": "Analytics for Capital Market Trading and Investment"
+      },
+      {
+        "pu_course_code": "ENVT5566",
+        "pu_course_name": "Advanced Spatial and Environmental Modelling",
+        "nus_course_code": "BT4015",
+        "nus_course_name": "Geospatial Analytics"
+      },
+      {
+        "pu_course_code": "CITS3007",
+        "pu_course_name": "Secure coding",
+        "nus_course_code": "CS4239",
+        "nus_course_name": "Software Security"
+      },
+      {
+        "pu_course_code": "CITS3006",
+        "pu_course_name": "Penetration Testing",
+        "nus_course_code": "IFS4103",
+        "nus_course_name": "Penetration Testing Practice"
+      },
+      {
+        "pu_course_code": "CITS3001",
+        "pu_course_name": "Algorithms, Agents and Artificial Intelligence",
+        "nus_course_code": "CS3243",
+        "nus_course_name": "Introduction to Artificial Intelligence"
+      },
+      {
+        "pu_course_code": "CITS5506",
+        "pu_course_name": "The Internet of Things",
+        "nus_course_code": "CS3237",
+        "nus_course_name": "Introduction to Internet of Things"
       }
     ]
   }
