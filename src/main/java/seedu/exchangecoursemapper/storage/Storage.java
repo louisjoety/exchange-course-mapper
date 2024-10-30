@@ -1,15 +1,7 @@
 package seedu.exchangecoursemapper.storage;
 
-import java.io.IOException;
-import java.io.BufferedWriter;
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.FileReader;
-
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
+import java.io.*;
+import java.nio.file.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -18,64 +10,77 @@ import java.util.logging.Logger;
 import seedu.exchangecoursemapper.courses.Course;
 
 public class Storage {
-    public static final String MYLIST_FILE_PATH = "./data/myList.json";
+    private static final String MYLIST_RESOURCE_PATH = "/myList.json";  // Path inside the JAR
+    private static final String USER_HOME = System.getProperty("user.home");
+    private static final String MYLIST_FILE_PATH = USER_HOME + "/myList.json";  // User's writable file path
     private static final Logger logger = Logger.getLogger(Storage.class.getName());
-    private final String filePath;
-
+    private final List<String> cachedCourses;
 
     public Storage() {
-        this(MYLIST_FILE_PATH);
+        this.cachedCourses = new ArrayList<>();
+        loadInitialCourses();
+        loadCoursesFromFile();
     }
 
-    public Storage(String filePath) {
-        this.filePath = filePath;
-        initializeMyList();
-    }
+    private void loadInitialCourses() {
+        try (InputStream inputStream = getClass().getResourceAsStream(MYLIST_RESOURCE_PATH)) {
+            if (inputStream == null) {
+                logger.log(Level.SEVERE, "Resource myList.json not found in JAR");
+                return;
+            }
 
-    private void initializeMyList() {
-        Path path = Paths.get(filePath);
-        try {
-            if (!Files.exists(path)) {
-                Files.createDirectories(path.getParent());
-                Files.createFile(path);
-                logger.log(Level.INFO, "Initialized myList.json at {0}", filePath);
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    cachedCourses.add(line);
+                }
+                logger.log(Level.INFO, "Loaded initial courses from embedded myList.json, total courses: {0}", cachedCourses.size());
             }
         } catch (IOException e) {
-            logger.log(Level.SEVERE, "Failed to initialize myList.json", e);
+            logger.log(Level.SEVERE, "Failed to load initial courses from myList.json resource", e);
+        }
+    }
+
+    private void loadCoursesFromFile() {
+        Path path = Paths.get(MYLIST_FILE_PATH);
+        if (Files.exists(path)) {
+            try (BufferedReader reader = new BufferedReader(new FileReader(MYLIST_FILE_PATH))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    cachedCourses.add(line);
+                }
+                logger.log(Level.INFO, "Loaded courses from myList.json file, total courses: {0}", cachedCourses.size());
+            } catch (IOException e) {
+                logger.log(Level.SEVERE, "Failed to load courses from myList.json file", e);
+            }
         }
     }
 
     public void addCourse(Course course) {
         assert course != null : "Course cannot be null";
         String courseEntry = formatCourseEntry(course);
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
-            writer.write(courseEntry);
-            writer.newLine();
-            logger.log(Level.INFO, "Successfully added course to myList.json: {0}", courseEntry);
-        } catch (IOException e) {
-            logger.log(Level.SEVERE, "Failed to add course to myList.json", e);
-        }
+        cachedCourses.add(courseEntry); // Add to cached list
+        saveAllCourses(); // Save to file
+        logger.log(Level.INFO, "Successfully added course: {0}", courseEntry);
     }
 
     public void deleteCourse(int index) {
-        List<String> allCourses = loadAllCourses();
-        if (index < 0 || index >= allCourses.size()) {
+        if (index < 0 || index >= cachedCourses.size()) {
             logger.log(Level.WARNING, "Invalid index for deletion: {0}", index);
             return;
         }
 
-        allCourses.remove(index);
-        logger.log(Level.INFO, "Deleted course at index {0} from myList.json", index);
-        saveAllCourses(allCourses);
+        cachedCourses.remove(index);
+        logger.log(Level.INFO, "Deleted course at index {0}", index);
+        saveAllCourses(); // Save updated list to file
     }
 
     public Course getCourse(int index) {
-        List<String> allCourses = loadAllCourses();
-        if (index < 0 || index >= allCourses.size()) {
+        if (index < 0 || index >= cachedCourses.size()) {
             throw new IndexOutOfBoundsException("Course index out of bounds");
         }
 
-        String courseLine = allCourses.get(index);
+        String courseLine = cachedCourses.get(index);
         logger.log(Level.INFO, "Retrieved course at index {0}: {1}", new Object[]{index, courseLine});
 
         String[] parts = courseLine.split(" \\| ");
@@ -83,30 +88,19 @@ public class Storage {
         return new Course(parts[2], parts[0], parts[1]);
     }
 
-    public List<String> loadAllCourses() {
-        List<String> courses = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                courses.add(line);
-            }
-            logger.log(Level.INFO, "Loaded all courses from myList.json, total courses: {0}", courses.size());
-        } catch (IOException e) {
-            logger.log(Level.SEVERE, "Failed to load courses from myList.json", e);
-        }
-        return courses;
+    public List<String> getAllCourses() {
+        return new ArrayList<>(cachedCourses); // Return a copy to avoid external modifications
     }
 
-    private void saveAllCourses(List<String> courses) {
-        assert courses != null : "Course list to save should not be null";
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            for (String course : courses) {
+    private void saveAllCourses() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(MYLIST_FILE_PATH))) {
+            for (String course : cachedCourses) {
                 writer.write(course);
                 writer.newLine();
             }
-            logger.log(Level.INFO, "Saved all courses to myList.json, total courses: {0}", courses.size());
+            logger.log(Level.INFO, "Saved all courses to myList.json, total courses: {0}", cachedCourses.size());
         } catch (IOException e) {
-            logger.log(Level.SEVERE, "Failed to save courses to myList.json", e);
+            logger.log(Level.SEVERE, "Failed to save courses to myList.json file", e);
         }
     }
 

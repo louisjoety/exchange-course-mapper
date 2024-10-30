@@ -62,7 +62,7 @@ public class CompareMappedCommand extends CheckInformationCommand {
         String university1 = inputs[1].trim();
         String university2 = inputs[2].trim();
 
-        List<String> allModules = storage.loadAllCourses();
+        List<String> allModules = storage.getAllCourses();
         assert allModules != null : "Loaded modules list should not be null";
         logger.log(Level.INFO, LOADED_MODULES);
 
