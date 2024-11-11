@@ -10,7 +10,7 @@ or by partner universities (PU) when you want to view the relevant options. For 
 you can save it in the Personal Tracker provided by ExchangeCourseMapper!
 
 - [Quick Start](#quick-start)
-- [Features](#features-)
+- [Features](#features)
     - [List all commands: `commands`](#list-all-commands-commands)
     - [Help Command: `help`](#help-command-help)
     - [List out all the possible schools from the options: `list schools`](#list-out-all-the-possible-schools-from-the-options-list-schools)

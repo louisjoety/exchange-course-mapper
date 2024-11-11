@@ -8,7 +8,7 @@
   - [Class Diagrams](#class-diagrams)
     - [Command Structure](#command-structure)
     - [Parser Class](#parser-class-diagram)
-    - [Course Validator Class](#coursevalidator-class-diagram-)
+    - [Course Validator Class](#coursevalidator-class-diagram)
     - [Storage Class](#storage-class-diagram)
 - [Implementation](#implementation)
   - [General JSON file reading process](#general-json-file-reading-process)
